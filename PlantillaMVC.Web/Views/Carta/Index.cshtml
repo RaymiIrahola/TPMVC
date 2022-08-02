@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<PlantillaMVC.Web.Models.Carta>
+@{
+    Layout = null; }
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cartas</title>
+</head>
+<body>
+    <a asp-action="FormAlta">Alta Carta</a><br />
+    <h5>Cartas</h5>
+    <table>
+        <thead>
+
+            <tr><th>Nombre</th><th>Acciones</th></tr>
+
+
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                @foreach (PlantillaMVC.Web.Models.Carta carta in Model)
+                {
+                    <tr>
+                        <td>
+                            <a  asp-controller="CartaCaracteristica" asp-action="CartaCaracteristica" asp-route-id="@carta.CartaId">@carta.Nombre</a>
+                        </td>
+                        @*<td>
+                            <form asp-controller="Carta" asp-action="">
+
+                            </form>
+                        </td>*@
+                        <td>
+
+                            <!-- Formulario para el post-->
+                            <form asp-controller="Carta" asp-action="Eliminar" method="post">
+                                <input type="hidden" asp-for="@carta.CartaId" />
+                                <button type="submit" asp-controller="Carta" asp-action="Eliminar" asp-route-id="@carta.CartaId">Eliminar</button>
+                                <a asp-controller="Carta" asp-action="Modificar" asp-route-id="@carta.CartaId">Modificar</a>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>
