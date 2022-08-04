@@ -47,7 +47,7 @@ namespace PlantillaMVC.Web.Controllers
         //    }
         //}
 
-        public ViewResult CartaCaracteristica() => View(Repositorio.caracteristicaLista);
+        //public ViewResult CartaCaracteristica() => View(Repositorio.caracteristicaLista);
         public ViewResult ListaCartasRegistradas() => View(Repositorio.CartasRegistradas);
 
         //private readonly ILogger<HomeController> _logger;

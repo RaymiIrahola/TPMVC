@@ -62,13 +62,14 @@ namespace PlantillaMVC.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult CartaCaracteristica() => View();
-
-        [HttpPost]
-        public IActionResult CartaCaracteristica(Carta caracter)
+        public IActionResult CaracteristicaCarta(int id)
         {
-            Repositorio.CaracteristicaCarta(caracter);
-            return View("CartaCaracteristica", Repositorio.caracteristicaLista);
+            var cartaId = Repositorio.GetCarta(id);
+            if (cartaId is null)
+            {
+                return NotFound();
+            }
+            return View(cartaId);
         }
 
         //public ViewResult CartaCaracteristica() => View(Repositorio.caracteristicaLista);

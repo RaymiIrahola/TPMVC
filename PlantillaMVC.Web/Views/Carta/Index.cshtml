@@ -16,10 +16,12 @@
 <body>
     <a asp-action="FormAlta">Alta Carta</a><br />
     <h5>Cartas</h5>
-    <table>
+
+    <div class="container-fluid">
+    <table class="table table-bordered order-table">
         <thead>
 
-            <tr><th>Nombre</th><th>Acciones</th></tr>
+            <tr><th>Nombre</th><th>Nivel</th><th>Atributo</th><th>Categoria</th><th>Subcategoria</th><th>Tipo</th><th>Ataque</th><th>Defensa</th><th>Descripcion</th></tr>
 
 
         </thead>
@@ -30,13 +32,16 @@
                 {
                     <tr>
                         <td>
-                            <a  asp-controller="CartaCaracteristica" asp-action="CartaCaracteristica" asp-route-id="@carta.CartaId">@carta.Nombre</a>
+                            <a  asp-controller="Carta" asp-action="CaracteristicaCarta" asp-route-id="@carta.CartaId">@carta.Nombre</a>
                         </td>
-                        @*<td>
-                            <form asp-controller="Carta" asp-action="">
-
-                            </form>
-                        </td>*@
+                        <td>@carta.Nivel</td>
+                        <td>@carta.Atributo</td>
+                        <td>@carta.Categoria</td>
+                        <td>@carta.Subcategoria</td>
+                        <td>@carta.Tipo</td>
+                        <td>@carta.Ataque</td>
+                        <td>@carta.Defensa</td>
+                        <td>@carta.Descripcion</td>
                         <td>
 
                             <!-- Formulario para el post-->
@@ -51,5 +56,6 @@
             }
         </tbody>
     </table>
+    </div>
 </body>
 </html>

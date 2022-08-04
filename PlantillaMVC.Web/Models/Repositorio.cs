@@ -13,11 +13,6 @@ namespace PlantillaMVC.Web.Models
     
         public static IEnumerable<Carta> CartasRegistradas => cartas;
 
-        private static List<Carta> caracteristicas = new List<Carta>();
-        public static IEnumerable<Carta> Caracteristicas => caracteristicas;
-        public static void CaracteristicaCarta(Carta caracteristica) => caracteristicas.Add(caracteristica);
-
-        public static IEnumerable<Carta> caracteristicaLista => caracteristicas;
 
         public static Carta GetCarta(int id)
            => cartas.Find(c => c.CartaId == id);

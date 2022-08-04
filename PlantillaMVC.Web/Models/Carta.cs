@@ -10,6 +10,7 @@ namespace PlantillaMVC.Web.Models
         public int CartaId { get; set; }
         public string Nombre { get; set; }
         public int Nivel { get; set; }
+        public string Tipo { get; set; }
         public string Atributo { get; set; }
         public string Descripcion { get; set; }
         public string Categoria { get; set; }
