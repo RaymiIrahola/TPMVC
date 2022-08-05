@@ -17,6 +17,7 @@ namespace PlantillaMVC.Web.Models
         public string Subcategoria { get; set; }
         public int Ataque { get; set; }
         public int Defensa { get; set; }
+        public string Exclusiva { get; set; }
     }
 }
 

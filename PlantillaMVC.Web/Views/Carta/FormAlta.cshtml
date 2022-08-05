@@ -14,11 +14,129 @@
 <body>
     <form asp-action="FormAlta" method="post">
         <div asp-validation-summary="All"></div>
-        <div class="container-fluid">
+        @*<div class="container-fluid">
             <label asp-for="CartaId">Id:</label>
-            <input asp-for="CartaId" min="0" max="14000" required/>
+            <input asp-for="CartaId" min="0" max="14000" required />
             <label asp-for="Nombre">Nombre:</label>
             <input asp-for="Nombre" required />
+        </div>*@
+        <div>
+            <label asp-for="CartaId">Id:</label>
+            <input asp-for="CartaId" type="number" min="0" max="14000" />
+        </div>
+        <div>
+            <label asp-for="Nombre">Nombre:</label>
+            <input asp-for="Nombre" type="text" />
+        </div>
+        <div>
+            <label asp-for="Nivel">Nivel:</label>
+            <input asp-for="Nivel" type="number" min="1" max="13" placeholder="Ingrese el nivel del monstruo" />
+        </div>
+        <div>
+            <label asp-for="Atributo">Atributo:</label>
+            <select asp-for="Atributo" required>
+                <option value=""> </option>
+                <option>Ninguna, es una Magica/Trampa</option>
+                <option>Luz</option>
+                <option>Oscurdad</option>
+                <option>Fuego</option>
+                <option>Viento</option>
+                <option>Agua</option>
+                <option>Tierra</option>
+                <option>Divino</option>
+            </select>
+        </div>
+        <div>
+            <label>Categoria</label>
+            <select asp-for="Categoria" required>
+                <option value=""> </option>
+                <option value="Monstruo">Monstruo</option>
+                <option value="Trampa">Trampa</option>
+                <option value="Magica">Magica</option>
+            </select>
+        </div>
+        <div>
+            <label>Subcategoria</label>
+            <select asp-for="Subcategoria" required>
+                <option value=""> </option>
+                <option value="Normal">Normal</option>
+                <option value="Efecto">Efecto</option>
+                <option value="Toon">Toon</option>
+                <option value="Tuner">Tuner</option>
+                <option value="Gemini">Gemini</option>
+                <option value="Fusion">Fusion</option>
+                <option value="Sincronia">Sincronia</option>
+                <option value="XYZ">XYZ</option>
+                <option value="Pendulo">Pendulo</option>
+                <option value="Link">Link</option>
+                <option value="Ritual">Ritual</option>
+                <option value="Spirit">Spirit</option>
+                <option value="Continua">Continua</option>
+                <option value="Juego Rapido">Juego Rapido</option>
+                <option value="Equipo">Equipo</option>
+                <option value="Campo">Campo</option>
+                <option value="Contraefecto">Contraefecto</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="Tipo">Tipo:</label>
+            <select asp-for="Tipo">
+                <option value=""> </option>
+                <option value="Ninguna es una Magica/Trampa">Ninguna es una Magica/Trampa</option>
+                <option value="Hada">Hada</option>
+                <option value="Demonio">Demonio</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Guerrero-Bestias">Guerrero-Bestias</option>
+                <option value="Reptil">Reptil</option>
+                <option value="Piro">Piro</option>
+                <option value="Aqua">Aqua</option>
+                <option value="Pez">Pez</option>
+                <option value="Lanzador de Conjurose">Lanzador de Conjuros</option>
+                <option value="Dragon">Dragon</option>
+                <option value="Ciberso">Ciberso</option>
+                <option value="Maquina">Maquina</option>
+                <option value="Bestia">Bestia</option>
+                <option value="Roca">Roca</option>
+                <option value="Bestia Alada">Bestia Alada</option>
+                <option value="Trueno">Trueno</option>
+                <option value="Wyrm">Wyrm</option>
+                <option value="Serpiente Marina">Serpiente Marina</option>
+                <option value="Psico">Psico</option>
+                <option value="Dinosaurio">Dinosaurio</option>
+                <option value="Insecto">Insecto</option>
+                <option value="Cyborg">Cyborg</option>
+                <option value="Magical Knight">Magical Knight</option>
+                <option value="High Dragon">High Dragon</option>
+                <option value="Omega Psychic">Omega Psychic</option>
+                <option value="Celestial Warrior">Celestial Warrior</option>
+                <option value="Galaxy">Galaxy</option>
+                <option value="Bestia Divina">Bestia Divina</option>
+                <option value="Dios Creador">Dios Creador</option>
+            </select>
+        </div>
+        <div>
+            <label asp-for="Ataque">Ataque:</label>
+            <input asp-for="Ataque" type="number" min="0" max="10000" placeholder="Ingrese el ataque del monstruo" />
+        </div>
+        <div>
+            <label asp-for="Defensa">Defensa:</label>
+            <input asp-for="Defensa" type="number" min="0" max="10000" placeholder="Ingrese la defensa del monstruo" />
+        </div>
+        <div>
+            <label asp-for="Descripcion">Descripcion:</label>
+            <input asp-for="Descripcion" type="text" required />
+        </div>
+        <div>
+            <label>Exclusiva</label>
+            <select asp-for="Exclusiva" required>
+                <option value=""> </option>
+                <option value="TCG (Occidente)">TCG (Occidente)</option>
+                <option value="OCG (Oriente)">OCG (Oriente)</option>
+                <option value="TCG USA">TCG USA</option>
+                <option value="Anime">Anime</option>
+                <option value="TCG/OCG">TCG/OCG</option>
+                <option value="Rush Duel">Rush Duel</option>
+            </select>
         </div>
         <button class="btn btn-primary" type="submit">Alta Carta</button>
     </form>
